@@ -1,7 +1,8 @@
 {
-  "name": "Jamstacks starter",
-  "description": "A neutral Next.js foundation for Jamstacks websites.",
-  "domain": "",
+  "name": "Front Porch Home Loans",
+  "description": "Front Porch Home Loans is a friendly Durham mortgage broker. We compare loans from a panel of lenders, explain your repayments plainly and walk with you to closing day.",
+  "domain": "next-mortgage-broker.jamstacks.net",
+  "timeZone": "America/New_York",
   "jamstacks": {
     "siteId": "",
     "cdnUrl": "https://cdn.jamstacks.net"

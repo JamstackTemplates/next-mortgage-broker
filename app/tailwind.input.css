@@ -1,112 +1,969 @@
 @import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ==========================================================================
+   Front Porch Home Loans — "Haint-blue ceiling and the porch light"
+   Daytime Carolina porch (light) & sundown porch with glowing lantern (dark).
+   ========================================================================== */
+
 :root {
-  --bg: #f7f8fa;
-  --surface: #ffffff;
-  --text: #172033;
-  --muted: #526078;
-  --accent: #2457a7;
-  --accent-ink: #2457a7;
-  --on-accent: #ffffff;
-  --line: #c7cfdb;
-  --focus: #2457a7;
+  --paper: #FBF6EC;
+  --paper-2: #F3EADA;
+  --ink: #2A2622;
+  --muted: #5E574E;
+  --haint: #BFE0DC;
+  --haint-deep: #98C6C0;
+  --floor: #5D7470;
+  --floor-ink: #FFFFFF;
+  --floor-muted: #E6F0EC;
+  --primary: #A3392B;
+  --primary-hover: #8C2F23;
+  --primary-ink: #FFFFFF;
+  --porch-light: #F4C766;
+  --trim: #FFFFFF;
+  --line: #D9CDB8;
+  --focus: #A3392B;
+  --brass: #B88A3B;
+  --leaf: #3F6B4E;
+  --sky: #DCEEEB;
+  --window-pane: #CFE3E0;
+  --window-glow-opacity: 0;
+  --firefly-opacity: 0;
+  --lantern-glow-opacity: 0.42;
+  --clapboard-line: rgba(42, 38, 34, 0.055);
+  --ceiling-seam: rgba(42, 38, 34, 0.085);
+  --floor-seam: rgba(255, 255, 255, 0.13);
+  --nail-dot: rgba(42, 38, 34, 0.22);
   --map-filter: none;
+  --sky-top: #CFE6E2;
+  --sky-horizon: #FBF1DE;
+  --skyline-far: #B9D3C6;
+  --skyline-brick: #C99278;
+  --skyline-brick-deep: #B37A61;
+  --skyline-window: #9C5C45;
+  --skyline-window-glow: 0;
+  --skyline-tower: #D3C2A6;
+  --lawn: #6F9878;
+  --walk: #4E6460;
+  --brick-walk: #8A4A37;
+  --accent-ink: #A3392B;
+  --brick-mortar: #6E3829;
   color-scheme: light;
 }
+
 @media (prefers-color-scheme: dark) {
- :root:not(.light) {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
-  --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
-  color-scheme: dark;
- }
+  :root:not(.light) {
+    --paper: #13222A;
+    --paper-2: #1A2D36;
+    --ink: #F3ECDD;
+    --muted: #B9C4C2;
+    --haint: #2E5E62;
+    --haint-deep: #22484C;
+    --floor: #24393F;
+    --floor-ink: #F3ECDD;
+    --floor-muted: #C2D0CE;
+    --primary: #B5443A;
+    --primary-hover: #C65045;
+    --primary-ink: #FFFFFF;
+    --porch-light: #F4C766;
+    --trim: #D8D2C4;
+    --line: #355058;
+    --focus: #F4C766;
+    --brass: #D4A54A;
+    --leaf: #4E8260;
+    --sky: #0D1B22;
+    --window-pane: #F4C766;
+    --window-glow-opacity: 0.92;
+    --firefly-opacity: 0.9;
+    --lantern-glow-opacity: 0.88;
+    --clapboard-line: rgba(243, 236, 221, 0.06);
+    --ceiling-seam: rgba(13, 27, 34, 0.34);
+    --floor-seam: rgba(243, 236, 221, 0.09);
+    --nail-dot: rgba(243, 236, 221, 0.2);
+    --map-filter: grayscale(0.35) brightness(0.78) contrast(1.05);
+    --sky-top: #0A161D;
+    --sky-horizon: #2B3E47;
+    --skyline-far: #1C3038;
+    --skyline-brick: #3A3537;
+    --skyline-brick-deep: #2E2B2E;
+    --skyline-window: #1F2226;
+    --skyline-window-glow: 0.78;
+    --skyline-tower: #4A5559;
+    --lawn: #24402F;
+    --walk: #1B2C31;
+    --brick-walk: #4A3330;
+    --accent-ink: #F4C766;
+    --brick-mortar: #3A2725;
+    color-scheme: dark;
+  }
 }
+
 :root.dark {
-  --bg: #141923;
-  --surface: #1e2633;
-  --text: #f1f5fa;
-  --muted: #b5c2d5;
-  --accent: #2457a7;
-  --accent-ink: #a9cbff;
-  --on-accent: #ffffff;
-  --line: #61708a;
-  --focus: #a9cbff;
-  --map-filter: grayscale(.4) brightness(.8);
+  --paper: #13222A;
+  --paper-2: #1A2D36;
+  --ink: #F3ECDD;
+  --muted: #B9C4C2;
+  --haint: #2E5E62;
+  --haint-deep: #22484C;
+  --floor: #24393F;
+  --floor-ink: #F3ECDD;
+  --floor-muted: #C2D0CE;
+  --primary: #B5443A;
+  --primary-hover: #C65045;
+  --primary-ink: #FFFFFF;
+  --porch-light: #F4C766;
+  --trim: #D8D2C4;
+  --line: #355058;
+  --focus: #F4C766;
+  --brass: #D4A54A;
+  --leaf: #4E8260;
+  --sky: #0D1B22;
+  --window-pane: #F4C766;
+  --window-glow-opacity: 0.92;
+  --firefly-opacity: 0.9;
+  --lantern-glow-opacity: 0.88;
+  --clapboard-line: rgba(243, 236, 221, 0.06);
+  --ceiling-seam: rgba(13, 27, 34, 0.34);
+  --floor-seam: rgba(243, 236, 221, 0.09);
+  --nail-dot: rgba(243, 236, 221, 0.2);
+  --map-filter: grayscale(0.35) brightness(0.78) contrast(1.05);
+  --sky-top: #0A161D;
+  --sky-horizon: #2B3E47;
+  --skyline-far: #1C3038;
+  --skyline-brick: #3A3537;
+  --skyline-brick-deep: #2E2B2E;
+  --skyline-window: #1F2226;
+  --skyline-window-glow: 0.78;
+  --skyline-tower: #4A5559;
+  --lawn: #24402F;
+  --walk: #1B2C31;
+  --brick-walk: #4A3330;
+  --accent-ink: #F4C766;
+  --brick-mortar: #3A2725;
   color-scheme: dark;
 }
 
 @theme {
   --color-*: initial;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --radius-ui: .375rem;
+  --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Figtree Variable', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-hand: 'Caveat', cursive;
+  --radius-ui: 0.5rem;
 }
+
 @theme inline {
-  --color-bg: var(--bg);
-  --color-surface: var(--surface);
-  --color-ink: var(--text);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
   --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-ink: var(--accent-ink);
-  --color-on-accent: var(--on-accent);
+  --color-haint: var(--haint);
+  --color-haint-deep: var(--haint-deep);
+  --color-floor: var(--floor);
+  --color-floor-ink: var(--floor-ink);
+  --color-floor-muted: var(--floor-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-ink: var(--primary-ink);
+  --color-porch-light: var(--porch-light);
+  --color-trim: var(--trim);
   --color-line: var(--line);
+  --color-brass: var(--brass);
+  --color-leaf: var(--leaf);
+  --color-sky-top: var(--sky-top);
+  --color-sky-horizon: var(--sky-horizon);
+  --color-walk: var(--walk);
+  --color-accent-ink: var(--accent-ink);
 }
+
 :root {
   --measure: 42rem;
   --jamstacks-font-family: var(--font-sans);
-  --jamstacks-color-text: var(--text);
-  --jamstacks-color-background: var(--surface);
-  --jamstacks-color-primary: var(--accent);
+  --jamstacks-color-text: var(--ink);
+  --jamstacks-color-background: var(--paper);
+  --jamstacks-color-primary: var(--primary);
   --jamstacks-color-border: var(--line);
   --jamstacks-color-muted: var(--muted);
-  --jamstacks-color-link: var(--accent-ink);
+  --jamstacks-color-link: var(--primary);
   --jamstacks-border-radius: var(--radius-ui);
   --jamstacks-control-height: 2.75rem;
   --jamstacks-spacing: 1rem;
   --jamstacks-form-max-width: 40rem;
-  --jamstacks-toggle-color: var(--text);
-  --jamstacks-toggle-dark-color: var(--text);
+  --jamstacks-toggle-color: var(--ink);
+  --jamstacks-toggle-dark-color: var(--ink);
   --jamstacks-toggle-border: var(--line);
-  --jamstacks-toggle-background: var(--surface);
-  --jamstacks-toggle-dark-background: var(--surface);
+  --jamstacks-toggle-background: var(--paper);
+  --jamstacks-toggle-dark-background: var(--paper-2);
   --jamstacks-toggle-focus-color: var(--focus);
 }
+
 @layer base {
-  html { background: var(--bg); color: var(--text); font-family: var(--font-sans); scroll-padding-top: 1.5rem; }
-  body { margin: 0; line-height: 1.6; }
-  main { min-height: 65vh; }
-  a { text-underline-offset: .2em; }
-  a:hover { text-decoration: underline; }
-  button { cursor: pointer; }
-  :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-  [aria-current="page"] { text-decoration: underline; }
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    scroll-padding-top: 2rem;
+    accent-color: var(--primary);
+  }
+  body {
+    margin: 0;
+    line-height: 1.6;
+  }
+  main {
+    min-height: 65vh;
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    font-variation-settings: 'SOFT' 80, 'WONK' 1;
+    letter-spacing: -0.015em;
+  }
+  a {
+    text-underline-offset: 0.2em;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  button {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+  [aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
+  }
 }
-@utility wrap { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+
+@utility wrap {
+  width: min(100% - 2rem, 76rem);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   Porch textures (pure CSS patterns, visible in both light & dark)
+   ========================================================================== */
+
+.clapboard {
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 34px,
+    var(--clapboard-line) 34px,
+    var(--clapboard-line) 36px
+  );
+}
+
+.clapboard-alt {
+  background-color: var(--paper-2);
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent 0,
+    transparent 34px,
+    var(--clapboard-line) 34px,
+    var(--clapboard-line) 36px
+  );
+}
+
+.haint-ceiling {
+  background-color: var(--haint);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 44px,
+      var(--ceiling-seam) 44px,
+      var(--ceiling-seam) 45.5px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 45%);
+}
+
+.floor-planks {
+  background-color: var(--floor);
+  color: var(--floor-ink);
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 42px,
+      var(--floor-seam) 42px,
+      var(--floor-seam) 44px
+    ),
+    radial-gradient(circle 1.5px at 26px 22px, var(--nail-dot) 95%, transparent 100%),
+    radial-gradient(circle 1.5px at 240px 22px, var(--nail-dot) 95%, transparent 100%);
+  background-size: 100% 44px, 280px 88px, 280px 88px;
+}
+
+.floor-planks :focus-visible {
+  outline-color: var(--porch-light);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.hand-note {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ==========================================================================
+   Buttons, links & shared UI primitives
+   ========================================================================== */
+
 @layer components {
-  .button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: .6rem 1.2rem; border: 1px solid var(--accent); border-radius: var(--radius-ui); background: var(--accent); color: var(--on-accent); font-weight: 600; text-decoration: none; }
-  .button:hover { text-decoration: underline; }
-  .button-quiet { background: var(--surface); color: var(--accent-ink); border-color: var(--line); }
-  .text-link { color: var(--accent-ink); text-decoration: underline; }
-  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  .skip-link { position: absolute; left: 1rem; top: -8rem; padding: .75rem; z-index: 200; background: var(--surface); }
-  .skip-link:focus { top: 1rem; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.85rem;
+    padding: 0.65rem 1.35rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--radius-ui);
+    background: var(--primary);
+    color: var(--primary-ink);
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 0 rgba(42, 38, 34, 0.16);
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+  .button:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    text-decoration: underline;
+  }
+
+  .button-lg {
+    min-height: 3.35rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.0625rem;
+  }
+  .button:active {
+    translate: 0 2px;
+    box-shadow: none;
+  }
+
+  .button-quiet {
+    background: var(--paper);
+    color: var(--ink);
+    border-color: var(--ink);
+    box-shadow: 0 2px 0 rgba(42, 38, 34, 0.1);
+  }
+  .button-quiet:hover {
+    background: var(--paper-2);
+    border-color: var(--ink);
+  }
+
+  .button-on-floor {
+    background: var(--primary);
+    color: var(--primary-ink);
+    border-color: var(--trim);
+  }
+
+  .button-quiet-on-floor {
+    background: transparent;
+    color: var(--floor-ink);
+    border-color: var(--floor-ink);
+    box-shadow: none;
+  }
+  .button-quiet-on-floor:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--porch-light);
+  }
+
+  .text-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+  }
+  :root.dark .text-link {
+    color: var(--porch-light);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) .text-link {
+      color: var(--porch-light);
+    }
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -8rem;
+    padding: 0.75rem 1rem;
+    z-index: 200;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-ui);
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  .porch-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 2.5rem;
+    padding: 0.4rem 0.95rem;
+    border: 2px solid var(--line);
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .porch-chip:hover {
+    border-color: var(--ink);
+    background: var(--paper-2);
+    text-decoration: none;
+  }
+  .porch-chip-sm {
+    min-height: 2.1rem;
+    padding: 0.25rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .porch-chip[aria-pressed='true'],
+  .porch-chip[data-active='true'] {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-ink);
+  }
 }
-.map iframe { width: 100%; min-height: 20rem; border: 0; filter: var(--map-filter); }
-.enquiry__host { display: block; }
-.enquiry__status { margin-top: 1rem; color: var(--muted); }
-.enquiry[data-state="present"] > .enquiry__status { display: none; }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+/* ==========================================================================
+   Hero scene: sky, lawn, brick front walk, hanging sign & headline swash
+   ========================================================================== */
+
+.hero-sky {
+  background:
+    radial-gradient(120% 70% at 78% 100%, var(--sky-horizon) 0%, transparent 62%),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-top) 18%, var(--sky-horizon) 100%);
 }
+
+.hero-lawn {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 9px, rgba(0, 0, 0, 0.06) 9px 11px),
+    var(--lawn);
+}
+
+/* Durham running-bond brick walk */
+.brick-walk {
+  --brick-face: var(--brick-walk);
+  --brick-joint: var(--brick-mortar);
+  background-color: var(--brick-face);
+  background-image:
+    linear-gradient(0deg, var(--brick-joint) 2px, transparent 2px),
+    linear-gradient(90deg, var(--brick-joint) 2px, transparent 2px),
+    linear-gradient(90deg, var(--brick-joint) 2px, transparent 2px);
+  background-size: 100% 26px, 72px 52px, 72px 52px;
+  background-position: 0 0, 0 0, 36px 26px;
+}
+.brick-walk > .wrap {
+  position: relative;
+}
+.brick-walk::before {
+  /* Darken the walk so text reads cleanly over the joints */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.34));
+}
+.brick-walk :focus-visible {
+  outline-color: var(--porch-light);
+}
+
+.porch-sign {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  border: 2px solid color-mix(in oklab, var(--ink) 80%, transparent);
+  border-radius: 0.4rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  box-shadow: 0 3px 0 rgba(42, 38, 34, 0.18);
+  rotate: -1.2deg;
+}
+@media (max-width: 26rem) {
+  .porch-sign {
+    gap: 0.45rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.09em;
+  }
+}
+.porch-sign__nail {
+  inline-size: 0.4rem;
+  block-size: 0.4rem;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.hero-kicker {
+  color: var(--accent-ink);
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+}
+.hero-kicker__swash {
+  color: var(--porch-light);
+  z-index: -1;
+}
+
+/* Who sits on our porch: guest-list rows */
+.seat-list {
+  border-top: 2px solid color-mix(in oklab, var(--ink) 70%, transparent);
+}
+.seat-row {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 0.25rem 1rem;
+  align-items: start;
+  padding: 1.35rem 0.75rem 1.35rem 0.25rem;
+  border-bottom: 2px solid color-mix(in oklab, var(--ink) 22%, transparent);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 0.18s ease, padding 0.18s ease;
+}
+.seat-row:hover {
+  text-decoration: none;
+  background: color-mix(in oklab, var(--paper) 78%, transparent);
+}
+.seat-row:focus-visible {
+  outline-offset: -3px;
+  background: var(--paper);
+}
+.seat-row__number {
+  padding-top: 0.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  color: var(--accent-ink);
+}
+.seat-row__go {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+.seat-row__arrow {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  font-weight: 700;
+  transition: background-color 0.18s ease, color 0.18s ease, translate 0.18s ease;
+}
+.seat-row:hover .seat-row__arrow,
+.seat-row:focus-visible .seat-row__arrow {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-ink);
+  translate: 4px 0;
+}
+@media (min-width: 40rem) {
+  .seat-row {
+    grid-template-columns: 4rem minmax(0, 1fr) auto;
+    align-items: center;
+    padding-inline: 0.5rem 1rem;
+  }
+  .seat-row:hover {
+    padding-inline: 1rem 0.75rem;
+  }
+  .seat-row__number {
+    font-size: 2.1rem;
+    padding-top: 0;
+  }
+  .seat-row__go {
+    grid-column: 3;
+    margin-top: 0;
+  }
+}
+
+/* Brass door nameplate for the brokers */
+.nameplate {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  inline-size: 4rem;
+  block-size: 4.6rem;
+  border-radius: 50%;
+  border: 3px double color-mix(in oklab, var(--ink) 60%, transparent);
+  background: radial-gradient(circle at 35% 30%, #F6DE9E, var(--brass) 70%);
+  color: #2A2622;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 3px 0 rgba(42, 38, 34, 0.22);
+}
+
+/* Inner page heading motif */
+.motif-medallion {
+  display: grid;
+  place-items: center;
+  inline-size: 9rem;
+  block-size: 9rem;
+  border-radius: 50%;
+  border: 3px double color-mix(in oklab, var(--ink) 55%, transparent);
+  background: radial-gradient(circle at 50% 40%, var(--paper) 55%, var(--paper-2));
+  box-shadow: 0 0 0 6px color-mix(in oklab, var(--brass) 45%, transparent), 0 8px 0 rgba(42, 38, 34, 0.12);
+  rotate: 4deg;
+}
+.motif-medallion svg {
+  inline-size: 5rem;
+  block-size: 5rem;
+}
+
+/* "Greetings from" postcard */
+.postcard {
+  padding: 0.6rem 0.6rem 0.8rem;
+  border: 2px solid color-mix(in oklab, var(--ink) 75%, transparent);
+  border-radius: 0.5rem;
+  background: var(--paper);
+  box-shadow: 0 10px 24px rgba(42, 38, 34, 0.18);
+}
+@media (min-width: 64rem) {
+  .postcard {
+    rotate: 2.5deg;
+  }
+}
+.postcard__sky {
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-horizon));
+}
+
+/* ==========================================================================
+   Native <details> accordion & mobile screen-door disclosure
+   ========================================================================== */
+
+.porch-faq details {
+  border: 2px solid var(--line);
+  border-radius: var(--radius-ui);
+  background: var(--paper);
+  overflow: clip;
+}
+
+.porch-faq summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.05rem 1.2rem;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  cursor: pointer;
+}
+
+.porch-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.porch-faq summary::before {
+  content: '';
+  inline-size: 1.15rem;
+  block-size: 1.15rem;
+  flex-shrink: 0;
+  background-color: var(--primary);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' d='M5 7.5 10 12.5 15 7.5'/%3E%3C/svg%3E") no-repeat center / contain;
+  rotate: -90deg;
+}
+
+:root.dark .porch-faq summary::before {
+  background-color: var(--porch-light);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .porch-faq summary::before {
+    background-color: var(--porch-light);
+  }
+}
+
+.porch-faq details[open] > summary::before {
+  rotate: 0deg;
+}
+
+.porch-faq details::details-content {
+  interpolate-size: allow-keywords;
+  overflow: clip;
+  contain: layout;
+}
+
+.porch-faq details:not([open])::details-content {
+  block-size: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .porch-faq summary::before {
+    transition: rotate 0.2s ease;
+  }
+  .porch-faq details::details-content {
+    transition: block-size, content-visibility, display;
+    transition-duration: 0.28s;
+    transition-timing-function: ease-in-out;
+    transition-behavior: allow-discrete;
+  }
+}
+
+/* Mobile screen-door menu summary */
+.screen-door-menu > summary {
+  list-style: none;
+}
+.screen-door-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ==========================================================================
+   Repayment Estimator native <input type="range"> (per modern-web-guidance)
+   ========================================================================== */
+
+.porch-range {
+  --slider-track-size: 0.55rem;
+  --slider-thumb-size: 1.45rem;
+  --slider-track-radius: 999px;
+  --slider-thumb-radius: 50%;
+  --slider-track-color: rgba(255, 255, 255, 0.28);
+  --slider-fill-color: var(--porch-light);
+  --slider-thumb-color: var(--trim);
+  --slider-direction: to right;
+
+  --attr-min: attr(min type(<number>), 0);
+  --attr-max: attr(max type(<number>), 100);
+  --control-value: attr(value type(<number>), 50);
+  --slider-progress: calc(
+    progress(var(--control-value), var(--attr-min), var(--attr-max)) * 100%
+  );
+
+  appearance: none;
+  inline-size: 100%;
+  block-size: 2.5rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@supports not (opacity: progress(1, 0, 100)) {
+  .porch-range {
+    --slider-progress: calc(
+      (var(--control-value) - var(--attr-min)) /
+      (var(--attr-max) - var(--attr-min)) * 100%
+    );
+  }
+}
+
+.porch-range:focus-visible {
+  outline: 3px solid var(--porch-light);
+  outline-offset: 4px;
+  border-radius: 0.35rem;
+}
+
+/* WebKit/Blink — kept strictly separate from Firefox */
+.porch-range::-webkit-slider-runnable-track {
+  block-size: var(--slider-track-size);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--slider-track-radius);
+  background: linear-gradient(
+    var(--slider-direction),
+    var(--slider-fill-color) var(--slider-progress),
+    var(--slider-track-color) var(--slider-progress)
+  );
+}
+
+.porch-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  inline-size: var(--slider-thumb-size);
+  block-size: var(--slider-thumb-size);
+  margin-block-start: calc((var(--slider-track-size) - var(--slider-thumb-size)) / 2 - 1px);
+  border: 2.5px solid #2A2622;
+  border-radius: var(--slider-thumb-radius);
+  background: var(--slider-thumb-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+
+/* Firefox — separate rule blocks */
+.porch-range::-moz-range-track {
+  block-size: var(--slider-track-size);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--slider-track-radius);
+  background: var(--slider-track-color);
+}
+
+.porch-range::-moz-range-progress {
+  block-size: var(--slider-track-size);
+  border-radius: var(--slider-track-radius);
+  background: var(--slider-fill-color);
+}
+
+.porch-range::-moz-range-thumb {
+  inline-size: var(--slider-thumb-size);
+  block-size: var(--slider-thumb-size);
+  border: 2.5px solid #2A2622;
+  border-radius: var(--slider-thumb-radius);
+  background: var(--slider-thumb-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+
+/* ==========================================================================
+   Purposeful Porch Motion (opt-in under prefers-reduced-motion: no-preference)
+   ========================================================================== */
+
+.porch-fireflies {
+  opacity: var(--firefly-opacity);
+}
+
+.porch-window-glow {
+  opacity: var(--window-glow-opacity);
+}
+
+.lantern-halo {
+  opacity: var(--lantern-glow-opacity);
+}
+
+.mailbox-flag {
+  transform-box: fill-box;
+  transform-origin: 50% 85%;
+  transform: rotate(-72deg);
+}
+
+.mailbox-trigger:hover .mailbox-flag,
+.mailbox-trigger:focus-within .mailbox-flag,
+.mailbox-raised .mailbox-flag {
+  transform: rotate(0deg);
+}
+
+@keyframes firefly-drift {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(6px, -9px);
+    opacity: 1;
+  }
+}
+
+@keyframes lantern-breathe {
+  0%, 100% {
+    opacity: var(--lantern-glow-opacity);
+  }
+  50% {
+    opacity: min(1, calc(var(--lantern-glow-opacity) + 0.14));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .porch-firefly-a {
+    animation: firefly-drift 6.5s ease-in-out infinite;
+  }
+  .porch-firefly-b {
+    animation: firefly-drift 8.2s ease-in-out 1.4s infinite reverse;
+  }
+  .porch-firefly-c {
+    animation: firefly-drift 7.4s ease-in-out 2.8s infinite;
+  }
+  .lantern-lit .lantern-halo {
+    animation: lantern-breathe 4.8s ease-in-out infinite;
+  }
+  .mailbox-flag {
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* ==========================================================================
+   Map, Jamstacks support form host & Print view
+   ========================================================================== */
+
+.map {
+  /* Street-grid backdrop while the keyless embed loads (or if it is blocked) */
+  background-color: var(--paper-2);
+  background-image:
+    linear-gradient(90deg, color-mix(in oklab, var(--line) 80%, transparent) 2px, transparent 2px),
+    linear-gradient(0deg, color-mix(in oklab, var(--line) 80%, transparent) 2px, transparent 2px),
+    linear-gradient(28deg, transparent 49.4%, color-mix(in oklab, var(--haint-deep) 70%, transparent) 49.6% 50.6%, transparent 50.8%);
+  background-size: 64px 64px, 64px 64px, 100% 100%;
+}
+.map iframe {
+  width: 100%;
+  min-height: 22rem;
+  border: 0;
+  filter: var(--map-filter);
+}
+
+.enquiry__host {
+  display: block;
+}
+.enquiry__status {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+.enquiry[data-state='present'] > .enquiry__status {
+  display: none;
+}
+
+/* Print view: clean document output with estimator result, contact details & licensing line */
 @media print {
-  nav, .skip-link, .enquiry, button { display: none !important; }
-  html { background: white; color: black; }
-  a { color: inherit; }
+  header nav,
+  .site-header-art,
+  .screen-door-menu,
+  .skip-link,
+  .map,
+  .enquiry,
+  .estimator-controls,
+  .no-print,
+  .hero-lawn,
+  .postcard,
+  .porch-fireflies,
+  button {
+    display: none !important;
+  }
+  html,
+  body,
+  .clapboard,
+  .clapboard-alt,
+  .haint-ceiling,
+  .hero-sky,
+  .brick-walk,
+  .floor-planks {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111111 !important;
+  }
+  .floor-planks * {
+    color: #111111 !important;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .brick-walk::before {
+    display: none;
+  }
 }

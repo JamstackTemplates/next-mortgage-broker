@@ -1,0 +1,22 @@
+{
+  "templateId": "next-mortgage-broker",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "fullPage": false,
+  "captures": [
+    {
+      "mode": "light",
+      "sha256": "daa4f40d52d6a0b7993230d06b2502b621e1f95c0e41516df86c6751efe49805",
+      "file": "jamstacks/home-light.jpg",
+      "bytes": 168333
+    },
+    {
+      "mode": "dark",
+      "sha256": "8c9191093de8e0c1863b7105ec5809127340c9a8483d4a2be795e8390ec0103f",
+      "file": "jamstacks/home-dark.jpg",
+      "bytes": 168333
+    }
+  ]
+}

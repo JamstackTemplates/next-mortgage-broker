@@ -17,16 +17,15 @@ The `.claude/skills/` folder holds `write-plan` (drafts `plan/PLAN.md`) and `cle
 
 ## Structure and content
 
-`content/business.ts` holds the starter's shared business details and sample copy. When building a
-site, write page-specific copy directly in the route's `app/**/page.tsx` as JSX children of named React
-components. Put headings, calls to action, labels and captions in page order. Backing components
-own the semantic markup, Tailwind styles, accessibility and behavior. Keep typed data in `content/`
-for values the site reads programmatically, including contact details and structured collections.
-Document fields and validate IDs, required
-fields, prices, availability and references with item-specific failures. Rename in content and
-site.config.json. Keep the provisioner's config shape: name, description, domain, optional timeZone,
-jamstacks.siteId/cdnUrl and optional provisioningId. Business data never goes there. Reuse the design's
-illustrations and palette rather than adding unrelated assets.
+File ownership for **Front Porch Home Loans**:
+- `content/business.ts`: shared business details, Durham address, service area, brokers, licensing notice and Contact guidance.
+- `content/hours.ts`: seven same-day `OpeningHours` records (`America/New_York`).
+- `content/situations.ts`, `content/loans.ts`, `content/lenders.ts`, `content/process.ts`, `content/repayments.ts`, `content/faq.ts`: typed collections and repayment math helpers, validated by `content/validation.ts`.
+- `app/**/page.tsx`: route composition and editable page-specific copy as JSX children of named React components.
+- `components/art/`: bespoke inline SVG artwork (`PorchScene`, `DurhamSkyline`, `PorchSteps`, `Lantern`, `BalusterRail`, `HouseNumberPlaque`, `KeyTag`, `Mailbox`, `RockingChairs`, `CutawayHouse`, `MissingStepArt`).
+- `site.config.json`: provisioner config shape only (`name`, `description`, `domain`, `timeZone`, `jamstacks.siteId`/`cdnUrl`, optional `provisioningId`). Business data never goes there.
+
+Validate IDs, required fields, down payment bounds, terms, featured count, consecutive steps and cross-collection references with item-specific failures. Rename in `content/business.ts` and `site.config.json`. Reuse the design's illustrations and palette rather than adding unrelated assets.
 
 ## Styling: Tailwind CSS v4
 
